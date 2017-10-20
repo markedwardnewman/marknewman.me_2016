@@ -1,0 +1,471 @@
+/*=========================================
+  Site: marknewman.me
+  Author: Mark Newman
+  ========================================= */
+
+/* maroon */
+$color-primary-hex: #643232;
+$color-primary-hex-darker: #492424;
+$primary: 100,50,50;
+$color-primary-lightest: #{"rgba(" + $primary + ", .25)"};
+$color-primary-lighter:  #{"rgba(" + $primary + ", .37)"};
+$color-primary-light:    #{"rgba(" + $primary + ", .5)"};
+$color-primary:          #{"rgba(" + $primary + ", .67)"};
+$color-primary-dark:     #{"rgba(" + $primary + ", .75)"};
+$color-primary-darker:   #{"rgba(" + $primary + ", .95)"};
+$color-primary-darkest:  #{"rgba(" + $primary + ", 1)"};
+
+/* sand 215, 206, 204 */
+$color-secondary-hex-lighter: #d7cecc;
+$color-secondary-hex: #cddfcf;
+$color-secondary-hex-darker: #829985;
+$secondary: 205,223,207;
+$color-secondary-lightest: #{"rgba(" + $secondary + ", .25)"};
+$color-secondary-lighter:  #{"rgba(" + $secondary + ", .37)"};
+$color-secondary-light:    #{"rgba(" + $secondary + ", .5)"};
+$color-secondary:          #{"rgba(" + $secondary + ", .67)"};
+$color-secondary-dark:     #{"rgba(" + $secondary + ", .75)"};
+$color-secondary-darker:   #{"rgba(" + $secondary + ", .95)"};
+$color-secondary-darkest:  #{"rgba(" + $secondary + ", 1)"};
+
+/* olive  99,145,99 */
+$color-tertiary-darkest:  rgba(99,145,99,.1);
+$color-tertiary-darker:   rgba(99,145,99,.2);
+$color-tertiary-dark:     rgba(99,145,99,.3);
+$color-tertiary:          rgba(99,145,99,.5);
+$color-tertiary-light:    rgba(99,145,99,.7);
+$color-tertiary-lighter:  rgba(99,145,99,.9);
+$color-tertiary-lightest: rgba(99,145,99,1);
+
+/* black, white, and grays */
+$color-light:      rgba(255,255,255,1);
+$color-grey-light: rgba(0,0,0,.12);
+$color-grey:       rgba(0,0,0,.38);
+$color-grey-dark:  rgba(0,0,0,.54);
+$color-dark:       rgba(0,0,0,.95);
+$color-dark-hex:   #100808;
+
+$size-root: 	    2vh;
+$size-xs:        .5rem;
+$size-sm:       .75rem;
+$size:            1rem;
+$size-md:       1.5rem;
+$size-lg:         2rem;
+$size-xl:         3rem;
+
+$line-height: 1;
+
+$font-family-primary:   'Roboto', sans-serif;
+$font-family-secondary: 'Roboto Slab', sans-serif;
+$font-family-mono:      'Source Code Pro', sans-serif;
+
+$font-weight-light:  300;
+$font-weight-bold:   700;
+
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: $size-root;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+::selection {
+  background-color: $color-tertiary-dark;
+  color: $color-secondary-darkest;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $font-family-primary;
+  font-weight: $font-weight-light;
+  background-color: #061403;
+  background-image: url("../img/6b.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: $color-secondary-darker;
+}
+
+h1 {
+  margin: 0;
+  padding: $size;
+  border-top: 1px solid $color-secondary-lighter;
+  border-right: 3px solid $color-dark;
+  border-left: 1px solid $color-secondary-lighter;
+  font-family: $font-family-secondary;
+  font-weight: $font-weight-bold;
+  font-size: $size-lg;
+  line-height: $line-height;
+  text-align: center;
+  background-color: $color-dark-hex;
+  background: linear-gradient(to top right, $color-primary-hex, $color-dark-hex);
+}
+
+h2 {
+  margin: 0;
+  padding: $size;
+  border: thin solid $color-secondary-lightest;
+  border-radius: $size-lg;
+  font-family: $font-family-secondary;
+  font-weight: $font-weight-bold;
+  font-size: $size-lg;
+  line-height: $line-height;
+  text-align: center;
+  background-color: $color-dark;
+}
+
+h3 {
+  position: relative;
+  margin: 0;
+  padding: $size;
+  font-family: $font-family-secondary;
+  font-weight: $font-weight-bold;
+  line-height: $line-height;
+
+  border-top: 1px solid $color-secondary-lighter;
+  border-right: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-left: 1px solid $color-secondary-lightest;
+  border-radius: $size-lg;
+  box-shadow: 1px 1px 2px $color-dark;
+  background-color: $color-primary-darkest;
+}
+
+h3:hover,h3:focus {
+  outline-width: 0;
+  background-color: $color-primary-dark;
+  cursor: pointer;
+  transition: 0.15s;
+}
+
+h3:focus {
+  border-top: 1px dashed $color-secondary-lighter;
+  border-right: 1px dashed $color-primary-darkest;
+  border-bottom: 1px dashed $color-primary-darkest;
+  border-left: 1px dashed $color-secondary-lightest;
+}
+
+h3.active {
+  box-shadow: 3px 3px 2px $color-dark;
+  border: 1px solid $color-primary-hex-darker;
+  background-color: $color-primary;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+h3:first-of-type {
+  margin-top: 0;
+}
+
+h3:before {
+  content: '\25B6';
+  float: left;
+  margin-right: 5px;
+  transition: transform 0.15s;
+}
+
+h3.active:before {
+  transform: rotate(90deg);
+  //will-change: transform;
+}
+
+h3 span {
+  position: absolute;
+  left: $size-xl;
+  transform: translateX(0);
+  transition: 0.5s;
+  will-change: transform;
+}
+
+h3.active span {
+  left: 50%;
+  transform: translateX(-50%);
+  //will-change: transform;
+}
+
+h3 + div {
+  max-height: 0;
+  margin: 0 5%;
+  padding: 0 2.5% 0 2.5%;
+  border-right: thin solid $color-secondary-lighter;
+  border-left: thin solid $color-secondary-lighter;
+  border-bottom: thin solid transparent;
+  background-color: $color-dark;
+  overflow: hidden;
+  transition: 1s;
+  will-change: max-height;
+}
+
+h3 + div:last-of-type {
+  border-bottom: thin solid $color-secondary-lighter;
+  border-radius: 0 0 $size-xs $size-xs;
+}
+
+h3.active:last-of-type + div {
+  margin-bottom: 0;
+}
+
+a {
+  color: $color-secondary;
+}
+a:hover,
+a:visited {
+  color: $color-secondary-darker;
+}
+a:active {
+  color: $color-secondary-darkest;
+}
+
+a:focus {
+  outline-style: dotted;
+  outline-color: $color-secondary-dark;
+  outline-width: 1px;
+}
+
+p {
+  margin: 0;
+  padding: $size 0 $size 0;
+  line-height: $line-height * 1.5;
+  font-size: $size;
+  color: $color-secondary;
+}
+
+img {
+  border: 0;
+  vertical-align: middle;
+}
+
+header {
+  margin: $size 13.5% 0 13.5%;
+  display: flex;
+  flex-flow: row wrap-reverse;
+
+}
+
+header h1 {
+  flex: 2;
+  order: 2;
+}
+
+header nav {
+  flex: 3;
+  order: 1;
+  display: flex;
+  align-items: flex-end;
+}
+
+header > nav > a {
+  flex: 1;
+  padding: $size-sm;
+  border-top: 1px solid $color-secondary-lighter;
+  border-right: 1px solid $color-dark;
+  border-left: 1px solid $color-secondary-lightest;
+  font-family: $font-family-secondary;
+  font-size: $size;
+  text-decoration: none;
+  text-align: center;
+  background-color: $color-primary-darker;
+  background: linear-gradient(to bottom right, $color-primary-hex-darker, $color-primary-hex);
+  color: $color-secondary-darkest;
+}
+
+header nav a:focus,
+header nav a:hover {
+  background: linear-gradient(to bottom right, $color-primary-hex-darker, $color-primary-hex-darker);
+}
+
+header nav a:active {
+  background-color: $color-primary-darkest;
+}
+
+section,
+footer {
+  margin: 0 7.5%;
+  box-sizing: inherit;
+}
+
+section > div {
+  margin: 0 7.5%;
+  padding: $size 2.5% $size 2.5%;
+  border-right: thin solid $color-secondary-lighter;
+  border-left: thin solid $color-secondary-lighter;
+  background-color: $color-primary-light;
+}
+
+section:nth-child(3) > div {
+  padding: $size-xs 1.25% $size-xs 1.25%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+section:nth-child(3) div {
+  overflow: hidden;
+}
+
+div aside.figure {
+  transform: translateX(0);
+}
+
+aside {
+  flex: 1 47.5%;
+
+  min-height: 205px;
+  margin: $size-xs 1.25% $size-xs 1.25%;
+  padding: $size 2.5% $size 2.5%;
+  border-top: 1px solid $color-secondary-lighter;
+  border-left: 1px solid $color-secondary-lightest;
+  border-right: 0;
+  border-bottom: 0;
+  border-radius: $size-lg;
+  box-shadow: 1px 1px 2px $color-dark;
+  //transform: translateX(0);
+  text-align: center;
+
+  background-color: $color-primary-darkest;
+  //transition: 0.75s;
+  //will-change: transform;
+
+  display: flex;
+  flex-flow: column wrap;
+}
+
+aside:hover {
+  box-shadow: 3px 3px 2px $color-dark;
+  background-color: $color-primary-dark;
+  //transition: 0.25s;
+}
+
+aside h3 {
+  display: none;
+}
+
+aside:nth-child(odd) {
+  //transform: translateX(-110%);
+}
+
+aside:nth-child(even) {
+  //transform: translateX(110%);
+}
+
+aside:nth-child(odd) a:first-of-type {
+  order: 2;
+}
+
+aside:nth-child(odd) a:last-of-type {
+  order: 1;
+  align-self: flex-start;
+}
+
+aside:nth-child(odd) a:last-of-type img {
+  transform: scaleX(-1);
+}
+
+aside:nth-child(even) a:first-of-type {
+  order: 2;
+}
+
+aside:nth-child(even) a:last-of-type {
+  order: 1;
+  align-self: flex-end;
+}
+
+aside a:first-of-type img {
+  max-width: auto;
+  height: 60px;
+}
+
+aside p {
+  order: 3;
+  font-size: $size;
+}
+
+section:last-of-type > div > div  {
+  position: relative;
+  text-decoration: none;
+}
+
+section:last-of-type a {
+  position: absolute;
+  width: 25%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-38.5%, -50%);
+  text-decoration: none;
+}
+
+section:last-of-type a img {
+  width: 80%;
+  height: 80%;
+  opacity: .33;
+  transition: 0.25s;
+}
+
+section:last-of-type a:hover img {
+  transform: translate(-10.5%, 0);
+  width: 100%;
+  height: 100%;
+  opacity: .66;
+}
+
+section:last-of-type ul {
+  margin: 0;
+  padding: $size 0 $size 0;
+  list-style-type: none;
+}
+
+li {
+  margin: 0;
+  padding: 0;
+  line-height: $line-height * 1.5;
+  font-size: $size;
+  color: $color-secondary;
+}
+
+li:last-child {
+  padding-bottom: 0;
+}
+
+footer {
+  position: relative;
+  padding: 0 0 $size 0;
+  border: thin solid $color-secondary-lightest;
+  border-bottom: $color-dark;
+  border-radius: $size-lg $size-lg 0 0;
+  background-color: $color-dark;
+  color: $color-secondary-darker;
+  text-align: center;
+}
+
+footer h2 {
+  border: initial;
+  background-color: initial;
+}
+
+footer a:first-of-type {
+  display: block;
+  margin-bottom: $size;
+}
+
+footer img {
+  position: absolute;
+  width: 27px;
+  height: 27px;
+  top: $size;
+  right: $size;
+}
+
+@media screen and (min-width: 1048px) {
+  header {
+    margin: 1rem 24.25% 0 24.25%;
+  }
+  section, footer {
+    margin: 0 20%;
+  }
+}
